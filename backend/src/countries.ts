@@ -64,6 +64,3 @@ export async function fetchCountries(): Promise<CountryData[]> {
     }
 }
 
-export function cleanCountry(): CountryData {
-    return
-}
