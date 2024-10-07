@@ -37,12 +37,15 @@ interface Filter {
 }
 
 
+// Filters the countries, returning an array of countries that match
 async function filterCountries(filter: Filter) {
   filter.name = filter.name?.toLowerCase();
   filter.capital = filter.capital?.toLowerCase();
 
-  await (() => new Promise(res=>setTimeout(res,2000)))();
+  // Debug - add a 2second delay for front-end testing
+  // await (() => new Promise(res=>setTimeout(res,2000)))();
 
+  // Filter the bulkCountries array. Return false if a filter is present, but the country doesn't match it
   const filteredCountries: CountryData[] = bulkCountries.filter<CountryData>((country): country is CountryData => {
     if (!!filter.name && !country.lowercaseName.includes(filter.name)) return false;
     if (!!filter.capital && !country.lowercaseCapital?.includes(filter.capital)) return false;
@@ -55,7 +58,7 @@ async function filterCountries(filter: Filter) {
 
 // Download country data from API
 const bulkCountries: CountryData[] = await fetchCountries()
-bulkCountries.sort((a:CountryData, b:CountryData) => a.name.localeCompare(b.name))
+bulkCountries.sort((a: CountryData, b: CountryData) => a.name.localeCompare(b.name))
 console.log(`Countries downloaded: ${bulkCountries?.length}`)
 
 // Cleanse the data to make it easier to use in the resolvers
@@ -79,9 +82,11 @@ bulkCountries.forEach((country: CountryData) => {
 regions.sort();
 timezones.sort();
 
+
+// Apollo resolvers for the 4 different queries
 const resolvers = {
   Query: {
-    countries: (_parent: any, args: Filter) => filterCountries(args),//  Object.keys(countries).map((code: string) => countries[code]),
+    countries: (_parent: any, args: Filter) => filterCountries(args),
     country: (_parent: any, args: { code: string }) => countries[args.code],
     regions: () => regions,
     timezones: () => timezones
