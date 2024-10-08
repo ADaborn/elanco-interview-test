@@ -22,7 +22,7 @@ const skeletonArray = Array.from(Array(10).keys()); // Creates an array for 1...
 const Skeletons = () => (
     <div className={styles.skeletonContainer}>
         {
-            skeletonArray.map((s) => <Skeleton key={s} variant="rounded" width="232px" height="206px"  data-testid="skeleton" />)
+            skeletonArray.map((s) => <Skeleton key={s} variant="rounded" width="232px" height="206px" data-testid="skeleton" />)
         }
     </div>
 );
@@ -32,6 +32,7 @@ export default function CountryList({ isLoading, countries }: CountryListProps) 
 
     return (<Grid container data-testid="countrylist">
         {
+            !!countries &&
             countries.map((country: Country) => (
                 <Grid key={country.name} data-testid="country">
                     <Link href={`/country/${country.code}`} data-testid="anchor">
