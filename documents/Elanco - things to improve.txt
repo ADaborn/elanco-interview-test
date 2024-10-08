@@ -1,0 +1,49 @@
+Elanco are probably doing lots of things right.
+
+There are always some areas that can be improved.
+
+Here are some areas that can be looked at:
+
+---------------
+
+Git Pull-Request templates with task lists
+	Supports processes and increases quality (DoD)
+
+Increasing unit testing code-coverage
+
+Using code-coverage dashboards in the Ci/CD pipelines
+
+Consistent Project/Repo README templates
+
+Improve project setup instruction quality
+	eg Env variables - keystores?
+	Fixed versioning
+	F5 contract
+	Reduce time to first E2E result
+	IDE setup instructions
+
+New team members identify undocumented Collective Wisdom
+	Add to backlog
+	Maintain wiki
+
+Development of mocks/stubs for external dependencies
+	Helps projects to be run/tested/developed in isolation
+	Use DI + factory
+
+Consitent linting rules and implementations
+	Bake into project settings in repo
+
+
+Look at efficiency of Agile ceremonies
+	Can they be done better?
+
+Look at team dynamics/culture/habits
+	Pair programming
+	Code reviews
+	Effectiveness of PRs
+	PR sizes/frequency
+
+
+
+
+
