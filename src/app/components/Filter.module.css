@@ -2,6 +2,11 @@
     display: flex;
     flex-direction: row;
     gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.filter > div {
+    min-width: 120px;
 }
 
 .filterSelect {

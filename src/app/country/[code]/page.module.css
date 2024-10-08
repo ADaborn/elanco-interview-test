@@ -21,14 +21,27 @@
     flex-direction: row;
     gap: 1rem;
 }
+
 .field h6 {
     min-width: 100px;
 }
+
 .imageContainer {
-    width: 500px; 
+    width: 500px;
     height: 350px;
-    position: relative;   
+    position: relative;
 }
+
 .page img {
     z-index: -1;
+}
+
+@media (max-width: 1100px) {
+    .imageContainer {
+        width: 250px;
+        height: 175px;
+    }
+    .page {
+        flex-direction: column;
+    }
 }
