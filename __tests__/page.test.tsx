@@ -28,7 +28,7 @@ const mocks = [
 
 
 describe('Page', () => {
-    it('should render a heading', () => {
+    it('should render without crashing', () => {
         render(
             <MockedProvider mocks={mocks} addTypename={false}>
                 <Page />
